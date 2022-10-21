@@ -35,5 +35,9 @@
 
         <!-- Content -->
         @yield('content')
+
+        <footer class="container-fluid">
+            <div class="text-center fs-5">Copyright 2022</div>
+        </footer>
     </body>
 </html>
