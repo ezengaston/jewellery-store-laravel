@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        @vite(['resources/sass/app.scss', 'resources/sass/home.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
         <!-- Nab -->
@@ -38,7 +38,7 @@
         <!-- Content -->
         @yield('content')
 
-        <footer class="container-fluid">
+        <footer class="container-fluid pt-5 pb-4">
             <div class="text-center fs-5">Copyright 2022</div>
         </footer>
     </body>
