@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/sass/home.scss', 'resources/js/app.js'])
     </head>
     <body>
         <!-- Nab -->
@@ -29,7 +29,7 @@
                         <a class="nav-link text-center px-4 fs-4" href="/">Home</a>
                         <a class="nav-link text-center px-4 fs-4" href="/products">Products</a>
                         <a class="nav-link d-md-none text-center fs-4" href="/login">Login</a>
-                        <a class="nav-link btn btn-secondary d-none d-md-inline text-center px-4 fs-4" href="/login">Login</a>
+                        <a class="nav-link btn btn-outline-secondary d-none d-md-inline text-center px-4 fs-4" href="/login">Login</a>
                     </div>
                 </div>
             </div>
