@@ -2,9 +2,12 @@
 
 @section('content')
     <main>
-        <div class="container-fluid p-0">
-            <video width="100%" height="auto" autoplay muted loop>
+        <div class="container-xxl">
+            <video class="d-none d-md-block" width="100%" height="auto" autoplay muted loop>
                 <source src="home.mp4" type="video/mp4">
+            </video>
+            <video class="d-md-none" width="100%" height="auto" autoplay muted loop>
+                <source src="home-md.mp4" type="video/mp4">
             </video>
         </div>
         <div class="container-xxl">
