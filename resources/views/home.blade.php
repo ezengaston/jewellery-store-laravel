@@ -17,7 +17,7 @@
             </div>
             <div class="row gy-4">
                 @foreach ($most_recent_products as $product)
-                    <div class="col-sm-12 col-lg-4 d-flex justify-content-center">
+                    <div class="col-sm-6 col-lg-3 d-flex justify-content-center">
                         <a href='/' class="card shadow text-decoration-none text-reset">
                             <img src="{{ $product['image_path'] }}" class="card-img-top" alt="{{ $product['name'] }}">
                             <div class="card-body">
