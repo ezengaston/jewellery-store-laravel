@@ -11,8 +11,36 @@ class HomeController extends Controller
     {
         $products = Product::all();
 
+        $categories = [
+            [
+                'name' => 'necklaces & pendants',
+                'image_path' => 'categories_images/pendants.webp'
+            ],
+            [
+                'name' => 'earrings',
+                'image_path' => 'categories_images/earrings.webp'
+            ],
+            [
+                'name' => 'rings',
+                'image_path' => 'categories_images/rings.webp'
+            ],
+            [
+                'name' => 'bracelets',
+                'image_path' => 'categories_images/bracelets.webp'
+            ],
+            [
+                'name' => 'engagement rings',
+                'image_path' => 'categories_images/engagement.webp'
+            ],
+            [
+                'name' => 'home decor',
+                'image_path' => 'categories_images/home.webp'
+            ],
+        ];
+
         return view('home', [
-            'most_recent_products' => $products
+            'most_recent_products' => $products,
+            'categories' => $categories,
         ]);
     }
 }
