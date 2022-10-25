@@ -49,5 +49,27 @@
                 @endforeach
             </div>
         </div>
+        <div class="container-xxl" style="margin-top: 4rem">
+            <div class="row gy-4 align-items-center">
+                <div class="col-8">
+                    <img class="img-fluid" src="home-engagement-rings.jpeg" alt="Engagement rings">
+                </div>
+                <div class="col-4 pe-5">
+                    <div class="fw-bold fs-2">Love Your Way</div>
+                    <div class="fs-5">You’ll know who it’s for. You’ll know when it’s time. You’ll just know.</div>
+                    <a class="fs-4 text-decoration-none text-reset" href="/">Explore Love & Engagement</a>
+                </div>
+                <div class="col-4 ps-5">
+                    <div class="fw-bold fs-2">From the Source</div>
+                    <div class="fs-5">
+                        Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources.
+                    </div>
+                    <a class="fs-4 text-decoration-none text-reset" href="/">Follow Your Diamond's Journey</a>
+                </div>
+                <div class="col-8">
+                    <img class="img-fluid" src="home-diamond.jpeg" alt="Diamonds">
+                </div>
+            </div>
+        </div>
     </main>
 @endsection
