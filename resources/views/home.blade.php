@@ -50,23 +50,29 @@
             </div>
         </div>
         <div class="container-xxl" style="margin-top: 4rem">
-            <div class="row gy-4 align-items-center">
-                <div class="col-8">
+            <div class="row gy-4 align-items-center justify-content-center">
+                <div class="col-8 d-none d-lg-block">
                     <img class="img-fluid" src="home-engagement-rings.jpeg" alt="Engagement rings">
                 </div>
-                <div class="col-4 pe-5">
-                    <div class="fw-bold fs-2">Love Your Way</div>
-                    <div class="fs-5">You’ll know who it’s for. You’ll know when it’s time. You’ll just know.</div>
-                    <a class="fs-4 text-decoration-none text-reset" href="/">Explore Love & Engagement</a>
+                <div class="col-11 d-lg-none text-center">
+                    <img class="img-fluid" src="home-engagement-ring-mobile.webp" alt="Engagement rings" style="width: 100%">
                 </div>
-                <div class="col-4 ps-5">
-                    <div class="fw-bold fs-2">From the Source</div>
-                    <div class="fs-5">
+                <div class="col-11 col-lg-4 pe-lg-5">
+                    <div class="fw-bold fs-4">Love Your Way</div>
+                    <div class="fs-6 my-2">You’ll know who it’s for. You’ll know when it’s time. You’ll just know.</div>
+                    <a class="fs-6 fw-bold text-decoration-none text-reset" href="/">Explore Love & Engagement &nbsp; &#x276F;</a>
+                </div>
+                <div class="col-11 d-lg-none text-center">
+                    <img class="img-fluid" src="home-diamond-mobile.webp" alt="Diamonds" style="width: 100%">
+                </div>
+                <div class="col-11 col-lg-4 ps-lg-5">
+                    <div class="fw-bold fs-4">From the Source</div>
+                    <div class="fs-6 my-2">
                         Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources.
                     </div>
-                    <a class="fs-4 text-decoration-none text-reset" href="/">Follow Your Diamond's Journey</a>
+                    <a class="fs-6 fw-bold text-decoration-none text-reset" href="/">Follow Your Diamond's Journey &nbsp; &#x276F;</a>
                 </div>
-                <div class="col-8">
+                <div class="col-8 d-none d-lg-block">
                     <img class="img-fluid" src="home-diamond.jpeg" alt="Diamonds">
                 </div>
             </div>
