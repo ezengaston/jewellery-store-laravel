@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Story;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $products = Product::all();
+        $stories = Story::all();
 
         $categories = [
             [
@@ -41,6 +43,7 @@ class HomeController extends Controller
         return view('home', [
             'most_recent_products' => $products,
             'categories' => $categories,
+            'stories' => $stories,
         ]);
     }
 }

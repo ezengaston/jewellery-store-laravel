@@ -49,7 +49,29 @@
                 @endforeach
             </div>
         </div>
-        <div class="container-xxl" style="margin-top: 4rem">
+        <div class="container-xxl">
+            <div class="container-fluid my-5 text-center">
+                <div class="h1 fw-bold">Stories</div>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                @foreach ($stories as $story)
+                    <div class="col-sm-10 col-md-4 col-lg-4 d-flex justify-content-center">
+                        <a href="/story/{{ $story['slug'] }}" class="card shadow text-decoration-none text-reset">
+                            <img src="{{ $story['image_path'] }}" class="card-img-top" alt="{{ $story['title'] }}">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-capitalize">
+                                    {{ $story['title'] }}
+                                </h5>
+                                <p class="card-text">
+                                    {{ $story['short_description'] }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="container-xxl" style="margin-top: 5rem">
             <div class="row gy-4 align-items-center justify-content-center">
                 <div class="col-8 d-none d-lg-block">
                     <img class="img-fluid" src="home-engagement-rings.jpeg" alt="Engagement rings">
