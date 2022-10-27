@@ -6,3 +6,8 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.remove-active-effect:active {
+    background-color: transparent;
+    color: initial;
+}
