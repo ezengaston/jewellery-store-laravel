@@ -18,9 +18,11 @@
                 <div class="col-sm-3">
                     <div class="form-floating">
                         <select id="material" class="form-select">
-                            <option value="gold">Gold</option>
-                            <option value="silver">Silver</option>
-                            <option value="white_gold">White gold</option>
+                            @foreach ($materials as $material)
+                                <option value="{{ $material['name'] }}">
+                                    {{ ucwords($material['name']) }}
+                                </option>
+                            @endforeach
                         </select>
                         <label for="material" class="form-label">Material</label>
                     </div>
