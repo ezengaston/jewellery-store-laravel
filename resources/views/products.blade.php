@@ -8,9 +8,11 @@
                 <div class="col-sm-3">
                     <div class="form-floating">
                         <select id="category" class="form-select">
-                            <option value="bracelets">Bracelets</option>
-                            <option value="necklaces">Necklaces</option>
-                            <option value="rings">Rings</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category['name'] }}">
+                                    {{ ucwords($category['name']) }}
+                                </option>
+                            @endforeach
                         </select>
                         <label for="category" class="form-label">Category</label>
                     </div>
