@@ -4,7 +4,7 @@
     <main>
         <div class="container-xxl text-center display-4">Our Products</div>
         <div class="container-xxl">
-            <form class="row">
+            <form class="row" action="/products" method="GET">
                 <div class="col-sm-3">
                     <div class="form-floating">
                         <select id="category" class="form-select">
@@ -72,4 +72,16 @@
             </form>
         <div>
     </main>
+    <script>
+        const category = document.querySelector("#category");
+        const material = document.querySelector("#material");
+
+        category.addEventListener("change", () => {
+            window.location.search = `&category=${category.value}&material=${material.value}`;
+        });
+
+        material.addEventListener("change", () => {
+            window.location.search = `&category=${category.value}&material=${material.value}`;
+        })
+    </script>
 @endsection
