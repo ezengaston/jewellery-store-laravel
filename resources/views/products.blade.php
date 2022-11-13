@@ -5,7 +5,7 @@
         <div class="container-xxl text-center display-4">Our Products</div>
         <div class="container-xxl">
             <form class="row" action="/products" method="GET">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="form-floating">
                         <select id="category" class="form-select">
                             @foreach ($categories as $category)
@@ -24,7 +24,7 @@
                         <label for="category" class="form-label">Category</label>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="form-floating">
                         <select id="material" class="form-select">
                             @foreach ($materials as $material)
@@ -43,7 +43,26 @@
                         <label for="material" class="form-label">Material</label>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
+                    <div class="form-floating">
+                        <select id="gemstone" class="form-select">
+                            @foreach ($gemstones as $gemstone)
+                                @if ($gemstone['name'] === $gemstoneSelected)
+                                    <option value="{{ $material['name'] }}" selected>
+                                        {{ ucwords($gemstone['name']) }}
+                                    </option>
+                                    @continue
+                                @endif
+
+                                <option value="{{ $gemstone['name'] }}">
+                                    {{ ucwords($gemstone['name']) }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <label for="gemstone" class="form-label">Gemstone</label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
                     <div class="dropdown d-grid">
                         <button class="btn btn-secondary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                             Price
@@ -72,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-floating">
                         <input 
                             type="text" 
@@ -89,13 +108,18 @@
     <script>
         const category = document.querySelector("#category");
         const material = document.querySelector("#material");
+        const gemstone = document.querySelector("#gemstone");
 
         category.addEventListener("change", () => {
-            window.location.search = `&category=${category.value}&material=${material.value}`;
+            window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}`;
         });
 
         material.addEventListener("change", () => {
-            window.location.search = `&category=${category.value}&material=${material.value}`;
+            window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}`;
+        })
+
+        gemstone.addEventListener("change", () => {
+            window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}`;
         })
     </script>
 @endsection

@@ -18,12 +18,15 @@ class ProductController extends Controller
 
         $categorySelected = Category::where('name', request('category'))->get();
         $materialSelected = Material::where('name', request('material'))->get();
+        $gemstoneSelected = Gemstone::where('name', request('gemstone'))->get();
 
         $categorySelectedName = "bracelets";
         $materialSelectedName = "gold";
+        $gemstoneSelectedName = "diamonds";
 
         $categorySelectedId = null;
         $materialSelectedId = null;
+        $gemstoneSelectedId = null;
 
         if (count($categorySelected) > 0) {
             $categorySelectedId = $categorySelected[0]->id;
@@ -35,8 +38,14 @@ class ProductController extends Controller
             $materialSelectedName = $materialSelected[0]->name;
         }
 
+        if (count($gemstoneSelected) > 0) {
+            $gemstoneSelectedId = $gemstoneSelected[0]->id;
+            $gemstoneSelectedName = $gemstoneSelected[0]->name;
+        }
+
         $data = Product::where('category', $categorySelectedId)
                         ->where('material', $materialSelectedId)
+                        ->where('gemstone', $gemstoneSelectedId)
                         ->get();
 
         return view('products', [
@@ -46,6 +55,7 @@ class ProductController extends Controller
             'data' => $data,
             'categorySelected' => $categorySelectedName,
             'materialSelected' => $materialSelectedName,
+            'gemstoneSelected' => $gemstoneSelectedName,
         ]);
     }
 
