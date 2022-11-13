@@ -9,6 +9,13 @@
                     <div class="form-floating">
                         <select id="category" class="form-select">
                             @foreach ($categories as $category)
+                                @if ($category['name'] === $categorySelected)
+                                    <option value="{{ $category['name'] }}" selected>
+                                        {{ ucwords($category['name']) }}
+                                    </option>
+                                    @continue
+                                @endif
+
                                 <option value="{{ $category['name'] }}">
                                     {{ ucwords($category['name']) }}
                                 </option>
@@ -21,6 +28,13 @@
                     <div class="form-floating">
                         <select id="material" class="form-select">
                             @foreach ($materials as $material)
+                                @if ($material['name'] === $materialSelected)
+                                    <option value="{{ $material['name'] }}" selected>
+                                        {{ ucwords($material['name']) }}
+                                    </option>
+                                    @continue
+                                @endif
+
                                 <option value="{{ $material['name'] }}">
                                     {{ ucwords($material['name']) }}
                                 </option>
