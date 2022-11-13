@@ -19,40 +19,64 @@ class ProductController extends Controller
         $categorySelected = Category::where('name', request('category'))->get();
         $materialSelected = Material::where('name', request('material'))->get();
         $gemstoneSelected = Gemstone::where('name', request('gemstone'))->get();
+        $search = request('search');
 
-        $categorySelectedName = "bracelets";
-        $materialSelectedName = "gold";
-        $gemstoneSelectedName = "diamonds";
+        $categorySelectedName = 'any';
+        $materialSelectedName = 'any';
+        $gemstoneSelectedName = 'any';
 
-        $categorySelectedId = null;
-        $materialSelectedId = null;
-        $gemstoneSelectedId = null;
+        $categorySelectedId = '%';
+        $materialSelectedId = '%';
+        $gemstoneSelectedId = '%';
+
+        $data = [];
 
         if (count($categorySelected) > 0) {
             $categorySelectedId = $categorySelected[0]->id;
             $categorySelectedName = $categorySelected[0]->name;
+
+            if ($categorySelectedId === 4) {
+                $categorySelectedId = '%';
+            }
         }
 
         if (count($materialSelected) > 0) {
             $materialSelectedId = $materialSelected[0]->id;
             $materialSelectedName = $materialSelected[0]->name;
+
+            if ($materialSelectedId === 5) {
+                $materialSelectedId = '%';
+            }
         }
 
         if (count($gemstoneSelected) > 0) {
             $gemstoneSelectedId = $gemstoneSelected[0]->id;
             $gemstoneSelectedName = $gemstoneSelected[0]->name;
+
+            if ($gemstoneSelectedId === 4) {
+                $gemstoneSelectedId = '%';
+            }
         }
 
-        $data = Product::where('category', $categorySelectedId)
-                        ->where('material', $materialSelectedId)
-                        ->where('gemstone', $gemstoneSelectedId)
-                        ->get();
+        if (!$search) {
+            $data = Product::where('category', 'like', $categorySelectedId)
+                            ->where('material', 'like', $materialSelectedId)
+                            ->where('gemstone', 'like', $gemstoneSelectedId)
+                            ->get();
+        } else {
+            $categorySelectedName = "any";
+            $materialSelectedName = "any";
+            $gemstoneSelectedName = "any";
+
+            $data = Product::where('name', 'like', $search . '%')->get();
+        }
 
         return view('products', [
             'materials' => $materials,
             'categories' => $categories,
             'gemstones' => $gemstones,
-            'data' => $data,
+            'search' => $search,
+            'products' => $data,
             'categorySelected' => $categorySelectedName,
             'materialSelected' => $materialSelectedName,
             'gemstoneSelected' => $gemstoneSelectedName,

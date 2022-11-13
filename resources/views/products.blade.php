@@ -4,7 +4,7 @@
     <main>
         <div class="container-xxl text-center display-4">Our Products</div>
         <div class="container-xxl">
-            <form class="row" action="/products" method="GET">
+            <div class="row">
                 <div class="col-sm-3">
                     <div class="form-floating">
                         <select id="category" class="form-select">
@@ -21,7 +21,12 @@
                                 </option>
                             @endforeach
                         </select>
-                        <label for="category" class="form-label">Category</label>
+                        <label 
+                            for="category"
+                            class="form-label remove-floating-transition"
+                        >
+                            Category
+                        </label>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -40,7 +45,12 @@
                                 </option>
                             @endforeach
                         </select>
-                        <label for="material" class="form-label">Material</label>
+                        <label 
+                            for="material" 
+                            class="form-label remove-floating-transition"
+                        >
+                            Material
+                        </label>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -59,7 +69,12 @@
                                 </option>
                             @endforeach
                         </select>
-                        <label for="gemstone" class="form-label">Gemstone</label>
+                        <label 
+                            for="gemstone" 
+                            class="form-label remove-floating-transition"
+                        >
+                            Gemstone
+                        </label>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -69,17 +84,44 @@
                             class="form-control" 
                             id="search" 
                             placeholder="gold"
+                            value="{{ $search }}"
                         >
                         <label for="search" class="form-label">Search by name</label>
                     </div>
                 </div>
-            </form>
+            </div>
         <div>
+        <div class="container-xxl mt-5">
+            <div class="row gy-4">
+                @if (count($products) === 0)
+                    <div class="text-center fs-2">
+                        No products found
+                    </div>
+                @else
+                    @foreach ($products as $product)
+                        <div class="col-3 d-flex justify-content-center">
+                            <a href='/' class="card shadow text-decoration-none text-reset">
+                                <img src="{{ $product['image_path'] }}" class="card-img-top" >
+                                <div class="card-body">
+                                    <h5 class="card-title text-center text-uppercase">
+                                        {{ $product['name'] }}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ $product['short_description'] }}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
     </main>
     <script>
         const category = document.querySelector("#category");
         const material = document.querySelector("#material");
         const gemstone = document.querySelector("#gemstone");
+        const search = document.querySelector("#search");
 
         category.addEventListener("change", () => {
             window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}`;
@@ -91,6 +133,10 @@
 
         gemstone.addEventListener("change", () => {
             window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}`;
+        })
+
+        search.addEventListener("change", () => {
+            window.location.search = `&category=${category.value}&material=${material.value}&gemstone=${gemstone.value}&search=${search.value}`;
         })
     </script>
 @endsection
