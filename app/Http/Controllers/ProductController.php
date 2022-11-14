@@ -83,8 +83,16 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($id)
     {
-        return null;
+        $product = Product::find($id);
+        $material = Material::find($product->material);
+        $gemstone = Gemstone::find($product->gemstone);
+
+        return view('product', [
+            'product' => $product,
+            'material' => $material,
+            'gemstone' => $gemstone,
+        ]);
     }
 }

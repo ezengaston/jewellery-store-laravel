@@ -100,7 +100,7 @@
                 @else
                     @foreach ($products as $product)
                         <div class="col-3 d-flex justify-content-center">
-                            <a href='/' class="card shadow text-decoration-none text-reset">
+                            <a href="/product/{{ $product->id }}" class="card shadow text-decoration-none text-reset">
                                 <img src="{{ $product['image_path'] }}" class="card-img-top" >
                                 <div class="card-body">
                                     <h5 class="card-title text-center text-uppercase">
