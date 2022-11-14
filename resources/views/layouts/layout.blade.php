@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container-xxl">
                 <a class="navbar-brand" href="/">
-                    <img src="logo.svg" alt="Logo" width="50" height="40" class="d-inline-block align-text-top" />
+                    <img src="/logo.svg" alt="Logo" width="50" height="40" class="d-inline-block align-text-top" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
