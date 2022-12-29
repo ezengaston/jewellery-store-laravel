@@ -3,8 +3,8 @@
 @section('content')
     <main>
         <div class="container-xxl text-center display-4">Our Products</div>
-        <div class="container-xxl">
-            <div class="row">
+        <div class="container-xxl mt-3">
+            <div class="row gy-2">
                 <div class="col-sm-3">
                     <div class="form-floating">
                         <select id="category" class="form-select">
@@ -99,7 +99,7 @@
                     </div>
                 @else
                     @foreach ($products as $product)
-                        <div class="col-3 d-flex justify-content-center">
+                        <div class="col-xl-3 col-md-4 col-sm-6 d-flex justify-content-center">
                             <a href="/product/{{ $product->id }}" class="card shadow text-decoration-none text-reset">
                                 <img src="{{ $product['image_path'] }}" class="card-img-top" >
                                 <div class="card-body">
