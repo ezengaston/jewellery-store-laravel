@@ -28,7 +28,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link text-center px-4 fs-4" href="/">Home</a>
                         <a class="nav-link text-center px-4 fs-4" href="/products">Products</a>
-                        <a class="nav-link d-md-none text-center fs-4" href="/login">Basket</a>
+                        <a class="nav-link d-md-none text-center fs-4" href="/basket">Basket</a>
                         <a class="nav-link btn btn-outline-secondary d-none d-md-inline text-center px-4 fs-4 me-4" href="/basket">Basket</a>
                         <a class="nav-link d-md-none text-center fs-4" href="/login">Login</a>
                         <a class="nav-link btn btn-outline-secondary d-none d-md-inline text-center px-4 fs-4" href="/login">Login</a>
